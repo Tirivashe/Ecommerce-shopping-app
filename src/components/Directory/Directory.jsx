@@ -10,11 +10,11 @@ function Directory() {
     <Grid container justify="space-between" className={classes.root}>
       <Grid item xs={6} component="div">
         <img src={ShopWomen} alt="shopWomen"  width="100%" height="100%"/>
-        <Button className={classes.button}>Shop Womens</Button>
+        <Button disableRipple classes={{root: classes.button}}>Shop Womens</Button>
       </Grid>
       <Grid item xs={6} component="div">
         <img src={ShopMen} alt="shopMen" width="100%" height="100%"/>
-        <Button className={classes.button}>Shop Mens</Button>
+        <Button disableRipple classes={{root: classes.button}}>Shop Mens</Button>
       </Grid>
     </Grid>
   )
