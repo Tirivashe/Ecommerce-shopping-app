@@ -1,6 +1,7 @@
 import React from 'react'
-import { AppBar, Toolbar, Grid, Typography } from '@material-ui/core'
+import { AppBar, Toolbar, Grid, Typography, Button } from '@material-ui/core'
 import { useStyles } from './styles' 
+import { Link } from 'react-router-dom'
 
 function Header() {
   const classes = useStyles()
@@ -12,7 +13,9 @@ function Header() {
             <Typography>Logo Goes Here</Typography>
           </Grid>
           <Grid item>
-            <Typography>Links Go Here</Typography>
+            <Link to="/registration" style={{ textDecoration: "none" }}>
+              <Button>Register</Button>
+            </Link>
           </Grid>
         </Grid>
       </Toolbar>
