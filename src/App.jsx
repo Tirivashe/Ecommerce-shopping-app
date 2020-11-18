@@ -15,14 +15,13 @@ function App() {
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged( async user => {
       if(user){
-      const userRef = await handleUserProfile(user)
-      setCurrentUser(userRef)
+      await handleUserProfile(user)
+      setCurrentUser(user)
       }else{
         setCurrentUser(null)
       }
     })
     return () => unsubscribe()
-
   },[])
 
   return (
@@ -30,7 +29,7 @@ function App() {
       <Header currentUser={currentUser}/>
       <Switch>
         <Route exact path="/" render={()=> <HomePage currentUser={currentUser}/>} />
-        <Route path="/registration" component={Registration}/>
+        <Route path="/registration" render={()=> currentUser ? <Redirect to="/"/> : <Registration currentUser={currentUser} /> }/>
         <Route path="/login" render={()=> currentUser ? <Redirect to="/"/> : <Login /> }/>
       </Switch>
       <CssBaseline />

@@ -20,12 +20,11 @@ export const handleUserProfile = async (user, data) => {
   const { displayName, email} = user
 
   try {
-    const res = await userRef.set({
+    await userRef.set({
       displayName,
       email,
       ...data
     })
-    console.log("The response: ", res)
   } catch (error) {
     console.log(error)
   }
