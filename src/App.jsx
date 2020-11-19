@@ -7,6 +7,7 @@ import { Switch, Route, Redirect } from 'react-router-dom'
 import Registration from './pages/Registration/Registration'
 import Login from './pages/Login/Login'
 import { auth, handleUserProfile } from './firebase/utils'
+import Recovery from './pages/Recovery/Recovery'
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null)
@@ -31,6 +32,7 @@ function App() {
         <Route exact path="/" render={()=> <HomePage currentUser={currentUser}/>} />
         <Route path="/registration" render={()=> currentUser ? <Redirect to="/"/> : <Registration currentUser={currentUser} /> }/>
         <Route path="/login" render={()=> currentUser ? <Redirect to="/"/> : <Login /> }/>
+        <Route path="/recovery" render={()=> <Recovery />}/>
       </Switch>
       <CssBaseline />
     </>
