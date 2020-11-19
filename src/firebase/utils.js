@@ -15,9 +15,8 @@ export const signInWithGoogle = () => auth.signInWithPopup(GoogleProvider)
 
 export const handleUserProfile = async (user, data) => {
   if(!user) return
-  const { uid } = user
+  const { uid, displayName, email } = user
   const userRef = firestore.doc(`users/${uid}`)
-  const { displayName, email} = user
 
   try {
     await userRef.set({
