@@ -59,6 +59,7 @@ export default function Registration({ currentUser }) {
                 autoComplete="fname"
                 name="fullName"
                 variant="outlined"
+                type="text"
                 required
                 fullWidth
                 id="firstName"
@@ -72,6 +73,7 @@ export default function Registration({ currentUser }) {
               <TextField
                 variant="outlined"
                 required
+                type="email"
                 fullWidth
                 id="email"
                 label="Email Address"

@@ -3,6 +3,7 @@ import { Avatar, Button, CssBaseline, Typography, Container, TextField } from '@
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import { useStyles } from './styles'
 import { auth ,signInWithGoogle } from '../../firebase/utils'
+import { Link } from 'react-router-dom';
 
 export default function SignIn() {
   const initialState = {
@@ -45,6 +46,7 @@ export default function SignIn() {
           <TextField
             variant="outlined"
             margin="normal"
+            type="email"
             required
             fullWidth
             id="email"
@@ -77,6 +79,7 @@ export default function SignIn() {
           >
             Sign In
           </Button>
+          <Link to="/recovery" style={{ textDecoration: "none" }}>Forgot Password?</Link>
           <Typography align="center">OR</Typography>
           <Button
             onClick={signInWithGoogle}
