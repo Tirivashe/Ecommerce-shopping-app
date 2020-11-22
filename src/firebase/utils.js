@@ -17,15 +17,29 @@ export const handleUserProfile = async (user, data) => {
   if(!user) return
   const { uid, displayName, email } = user
   const userRef = firestore.doc(`users/${uid}`)
+  const snapshot = await userRef.get()
+  const userRoles = ['user']
 
   try {
-    await userRef.set({
-      displayName,
-      email,
-      ...data
-    })
+    if(!snapshot.exists){
+      await userRef.set({
+        displayName,
+        email,
+        userRoles,
+        ...data
+      })
+    }
   } catch (error) {
     console.log(error)
   }
   return userRef
+}
+
+export const checkUserAdmin = user => {
+  if(!user || !Array.isArray(user.userRoles)){
+    return false
+  }
+  if(user.userRoles.includes('admin')){
+    return true
+  }
 }
