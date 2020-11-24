@@ -4,7 +4,7 @@ import { useStyles } from './styles'
 import { Link } from 'react-router-dom'
 import { auth } from '../../firebase/utils'
 
-function Header({ currentUser }) {
+export default function Header({ currentUser }) {
   const classes = useStyles()
   return (
     <AppBar className={classes.root} position="static">
@@ -35,5 +35,3 @@ function Header({ currentUser }) {
     </AppBar>
   )
 }
-
-export default Header
