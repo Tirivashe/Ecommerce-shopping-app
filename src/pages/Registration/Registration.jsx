@@ -4,7 +4,7 @@ import { Avatar, Button, Container, CssBaseline, Grid, TextField, Typography } f
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined'
 import { auth, handleUserProfile } from '../../firebase/utils'
 
-export default function Registration({ currentUser }) {
+export default function Registration() {
   const initialState = {
     fullName: "",
     email:"",
