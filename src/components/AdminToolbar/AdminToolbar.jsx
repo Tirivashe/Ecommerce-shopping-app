@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 
 
-function Admin() {
+export default function AdminToolbar() {
   const currentUser = useSelector(state => state.user)
   const isAdmin = checkUserAdmin(currentUser)
 
@@ -18,5 +18,3 @@ function Admin() {
     )
   }
 }
-
-export default Admin
