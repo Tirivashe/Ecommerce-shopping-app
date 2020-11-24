@@ -4,7 +4,7 @@ import ShopMen from '../../assets/shopMens.jpg'
 import ShopWomen from '../../assets/shopWomens.jpg'
 import { useStyles } from './styles'
 
-function Directory() {
+export default function Directory() {
   const classes = useStyles()
   return (
     <Grid container justify="space-between" className={classes.root}>
@@ -19,5 +19,3 @@ function Directory() {
     </Grid>
   )
 }
-
-export default Directory
