@@ -11,7 +11,9 @@ export default function Header({ currentUser }) {
       <Toolbar>
         <Grid container justify="space-between" alignItems="center">
           <Grid item>
-            <Typography>Logo Goes Here</Typography>
+            <Link to="/" style={{ textDecoration: "none" }}>
+              <Typography>Logo Goes Here</Typography>
+            </Link>
           </Grid>
 
           { currentUser &&
